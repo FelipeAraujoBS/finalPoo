@@ -60,6 +60,7 @@ public class ProdutoAdicionarServlet implements Command {
 
             // Usar o ProdutoService para adicionar o produto ao repositório
             produtoService.adicionarProduto(produto);
+            System.out.println(produto);
             System.out.println("Produto adicionado com sucesso");
 
             response.setContentType("text/html;charset=UTF-8");//Tentativa para azer o JSP funcionar. (Parece que não deu certo).

@@ -46,6 +46,9 @@ public class ProdutoEditarServlet implements Command {
                 System.out.println(id);
                 Produto produto = produtoService.obterProdutoPorId(id);
 
+                System.out.println("Produto encontrado!");
+                System.out.println(produto);
+
                 if (produto == null) {
                     response.sendError(HttpServletResponse.SC_NOT_FOUND, "Produto não encontrado");
                     return;
@@ -68,6 +71,9 @@ public class ProdutoEditarServlet implements Command {
 
                 Produto produto = new Produto(id, nome, preco);
                 produtoService.atualizarProduto(produto);
+
+                System.out.println("Produto atualizado!");
+                System.out.println(produto);
 
                 response.sendRedirect("listarProdutos");
             } else {

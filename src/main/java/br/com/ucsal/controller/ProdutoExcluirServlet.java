@@ -39,6 +39,8 @@ public class ProdutoExcluirServlet implements Command {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		produtoService.removerProduto(id);
+		System.out.println("Produto excluido com sucesso!");
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/produtolista.jsp");
 		dispatcher.forward(request, response);
 	}

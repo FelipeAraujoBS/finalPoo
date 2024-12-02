@@ -46,7 +46,9 @@ public class Produto {
 		public void setPreco(Double preco) {
 			this.preco = preco;
 		}
-	    
-	    
 
+	@Override
+	public String toString() {
+		return String.format("Produto{id=%d, nome='%s', preco=%.2f}", id, nome, preco);
+	}
 }

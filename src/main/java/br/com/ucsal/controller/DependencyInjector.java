@@ -20,7 +20,7 @@ public class DependencyInjector {
                 try {
                     // Verifica se o campo é do tipo ProdutoService
                     if (field.getType() == ProdutoService.class) {
-                        System.out.println("Injetando dependência: " + field.getName());
+                        //System.out.println("Injetando dependência: " + field.getName());
 
                         // Usa a PersistenciaFactory para escolher o repositório
                         ProdutoRepository<?, ?> repository = PersistenciaFactory.getProdutoRepository(repositoryType);

@@ -34,7 +34,7 @@ public class ProdutoController extends HttpServlet {
                 try {
                     Command command = (Command) clazz.getDeclaredConstructor().newInstance();
                     commands.put(rota.value(), command);
-                    System.out.println("Registered command: " + rota.value() + " -> " + clazz.getSimpleName());
+                    //System.out.println("Registered command: " + rota.value() + " -> " + clazz.getSimpleName());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -66,7 +66,7 @@ public class ProdutoController extends HttpServlet {
             path = path.substring(0, path.length() - 1);
         }
 
-        System.out.println("Normalized Path: " + path);
+        //System.out.println("Normalized Path: " + path);
 
         // Se for um JSP, deixa ser processado normalmente.
         if (path.startsWith("WEB-INF/") || path.endsWith(".jsp")) {
@@ -76,7 +76,7 @@ public class ProdutoController extends HttpServlet {
 
         // Verificar se há um comando correspondente à rota
         Command command = commands.get("/" + path);
-        System.out.println("Matching Command: " + command);
+        //System.out.println("Matching Command: " + command);
 
         if (command == null) {
             response.sendError(HttpServletResponse.SC_NOT_FOUND, "Comando não encontrado para rota: " + path);
